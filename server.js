@@ -5,7 +5,6 @@ const path = require('path')
 const PORT = process.env.PORT || 3005;
 const Workout = require("./models/model");
 const app = express();
-
 app.use(logger("dev"));
 
 app.use(express.urlencoded({ extended: true }));
@@ -13,7 +12,7 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/myworkout", {useNewUrlParser: true,useUnifiedTopology: true,useCreateIndex: true,useFindAndModify: false});
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/myworkout", {useNewUrlParser: true});
 
 
 
